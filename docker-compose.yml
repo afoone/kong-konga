@@ -9,7 +9,7 @@ services:
     networks:
       - kong-service
     volumes:
-      - ./db:/var/lib/postgresql/data postgres
+      - ./db:/var/lib/postgresql/data 
   kong:
     build: .
     environment:
@@ -23,7 +23,7 @@ services:
       - KONG_LUA_SSL_VERIFY_DEPTH=3
       - KONG_LUA_SSL_TRUSTED_CERTIFICATE=/etc/ssl/certs/ca-certificates.pem
     ports:
-      - 8000:8000
+      - 8008:8000
       - 8443:8443
       - 8001:8001
       - 8444:8444
